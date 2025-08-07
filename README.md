@@ -22,11 +22,12 @@ correcte du patron Observateur.
 3. Modulariser le code en plusieurs fichiers appropriés.
 
 ### Acronymes SOLID:
-SRP = Single Responsibility Principle
-OCP = Open/Closed Principle
-LSP = Liskov Substitution Principle
-ISP = Interface Segregation Principle
-DIP = Dependency Inversion Principle
+
+- SRP = Single Responsibility Principle
+- OCP = Open/Closed Principle
+- LSP = Liskov Substitution Principle
+- ISP = Interface Segregation Principle
+- DIP = Dependency Inversion Principle
 
 ## Comment exécuter le code
 
