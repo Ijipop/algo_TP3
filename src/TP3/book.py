@@ -22,7 +22,7 @@ class Book:
     def getAddedDate(self): return self.added_date
     
     def __str__(self):
-        return "ID: {self.id}\nTitle: {self.title}\nAuthor: {self.author}\nISBN: {self.isbn}\nCategory: {self.category}\nAvailable: {self.available}\nAdded Date: {self.added_date}"
+        return f"ID: {self.id}\nTitle: {self.title}\nAuthor: {self.author}\nISBN: {self.isbn}\nCategory: {self.category}\nAvailable: {self.available}\nAdded Date: {self.added_date}"
         
         # book = {
         #     'id': {self.id},

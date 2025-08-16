@@ -13,6 +13,7 @@ class User(ABC):
         self.max_loans: int = 0
         self.loan_duration: int = 0 # days
         self.registration_date: datetime = datetime.datetime.now().isoformat()
+        self.active: bool = True
 
     def getId(self): return self.id
     def getName(self): return self.name
@@ -20,10 +21,15 @@ class User(ABC):
     def getMaxLoans(self): return self.max_loans
     def getLoanDuration(self): return self.loan_duration
     def getRegistrationDate(self): return self.registration_date
+    def getActive(self): return self.active
+
+    def setActive(self, new_active: bool): self.active = new_active
 
     def __str__(self):
-        return "ID: {self.id}\nName: {self.name}\nE-mail: {self.email}\nMax Loans: {self.max_loans}\nLoad Duration: {self.loan_duration}\nRegistration Date: {self.registration_date}"
+        return f"ID: {self.id}\nName: {self.name}\nE-mail: {self.email}\nMax Loans: {self.max_loans}\nLoad Duration: {self.loan_duration}\nRegistration Date: {self.registration_date}\nActive: {self.active}"
     
+    # def can_burrow(self, loan: int):
+    #     return loan < self.max_loans
 class UserStudent(User):
     def __init__(self, name, email):
         super().__init__(name, email)
