@@ -4,8 +4,8 @@ class Book:
     nb_books: int = 0
     
     def __init__(self, title: str, author: str, isbn: str, category: str, available: bool = True):
-        self.nb_books += 1
-        self.id: int = self.nb_books
+        Book.nb_books += 1
+        self.id: int = Book.nb_books
         self.title: str = title
         self.author: str = author
         self.isbn: str = isbn
@@ -20,10 +20,12 @@ class Book:
     def getCategory(self): return self.category
     def getAvailable(self): return self.available
     def getAddedDate(self): return self.added_date
+
+    def setAvailable(self, new_available: bool): self.available = new_available
     
     def __str__(self):
         return f"ID: {self.id}\nTitle: {self.title}\nAuthor: {self.author}\nISBN: {self.isbn}\nCategory: {self.category}\nAvailable: {self.available}\nAdded Date: {self.added_date}"
-        
+
         # book = {
         #     'id': {self.id},
         #     'title': {self.title},

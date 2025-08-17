@@ -6,12 +6,12 @@ class User(ABC):
     
     # @abstractmethod
     def __init__(self, name: str, email: str):
-        self.nb_users += 1
-        self.id: int = self.nb_users
+        User.nb_users +=1 
+        self.id: int = User.nb_users
         self.name: str = name
         self.email: str = email
         self.max_loans: int = 0
-        self.loan_duration: int = 0 # days
+        self.loan_duration: int = 14 # default nb days
         self.registration_date: datetime = datetime.datetime.now().isoformat()
         self.active: bool = True
 
@@ -25,25 +25,40 @@ class User(ABC):
 
     def setActive(self, new_active: bool): self.active = new_active
 
+    @abstractmethod
+    def showType(self):
+        pass
+
     def __str__(self):
         return f"ID: {self.id}\nName: {self.name}\nE-mail: {self.email}\nMax Loans: {self.max_loans}\nLoad Duration: {self.loan_duration}\nRegistration Date: {self.registration_date}\nActive: {self.active}"
     
-    # def can_burrow(self, loan: int):
+    # def can_burrow(self, loan: int) -> bool:
     #     return loan < self.max_loans
+
 class UserStudent(User):
     def __init__(self, name, email):
         super().__init__(name, email)
         self.max_loans = 3
         self.loan_duration = 14
 
+    def showType(self):
+        return "étudiant"
+
 class UserTeacher(User):
     def __init__(self, name, email):
         super().__init__(name, email)
         self.max_loans = 10
         self.loan_duration = 30
+    
+    def showType(self):
+        return "enseignant"
 
 class UserAdmin(User):
     def __init__(self, name, email):
         super().__init__(name, email)
         self.max_loans = -1     # unlimited
         self.loan_duration = -1 # unlimited
+        # float('inf') # alt?
+    
+    def showType(self):
+        return "admin"

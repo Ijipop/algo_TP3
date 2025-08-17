@@ -8,8 +8,6 @@ class BookManager:
         self.notification_manager = notification_manager
         self.books: list[Book] = []
     
-    # def add_book(self, title: str, author: str, isbn: str, category: str):
-    #     book = Book(title, author, isbn, category)
     def add_book(self, book: Book):
         self.books.append(book)
         self.notification_manager.notify(f"Nouveau livre ajouté - {book.getTitle()}")
@@ -28,6 +26,7 @@ class BookManager:
                 return True
         return False
     
+    """
     def search_books_by_title(self, search_term):
         results = [book for book in self.books if search_term.lower() in book.getTitle().lower()]
         return results
@@ -43,19 +42,29 @@ class BookManager:
     def search_books_by_Category(self, search_term):
         results = [book for book in self.books if search_term.lower() in book.getCategory().lower()]
         return results
+    """
 
-    # def add_book(self, title: str, author: str, isbn: str, category: str):
-    #     book = {
-    #         'id': len(self.books) + 1,
-    #         'title': title,
-    #         'author': author,
-    #         'isbn': isbn,
-    #         'category': category,
-    #         'available': True,
-    #         'added_date': datetime.datetime.now().isoformat()
-    #     }
-    #     self.books.append(book)
-        
-    #     self.notification_manager.notify(f"Nouveau livre ajouté - {title}")
-        
-    #     return book
+"""
+class ISearcher(ABC):
+    def __init__(self, book_manager: BookManager):
+        self.books = book_manager.books
+
+    @abstractmethod
+    def search(self, search_term):
+        pass
+class SearcherByTitle(ISearcher):
+    def search(self, search_term):
+        return [book for book in self.books if search_term.lower() in book.getTitle().lower()]
+    
+class SearcherByAuthor(ISearcher):
+    def search(self, search_term):
+        return [book for book in self.books if search_term.lower() in book.getAuthor().lower()]
+
+class SearcherByISBN(ISearcher):
+    def search(self, search_term):
+        return [book for book in self.books if search_term in book.getISBN()]
+
+class SearcherByCategory(ISearcher):
+    def search(self, search_term):
+        return [book for book in self.books if search_term.lower() in book.getCategory().lower()]
+"""

@@ -5,13 +5,13 @@ class Loan():
     nb_loans: int = 0
     
     def __init__(self, user_id: int, book_id: int):
-        self.nb_loans += 1
-        self.id: int = self.nb_loans
+        Loan.nb_loans += 1
+        self.id: int = Loan.nb_loans
         self.user_id: int = user_id
         self.book_id: int = book_id
         self.loan_date: datetime = datetime.datetime.now().isoformat()
         self.due_date: datetime
-        self.returned: bool
+        self.returned: bool = False
         self.return_date: datetime
 
     def getId(self): return self.id
@@ -21,7 +21,11 @@ class Loan():
     def getDueDate(self): return self.due_date
     def getReturned(self): return self.returned
     def getReturnDate(self): return self.return_date
+
+    def setLoanDate(self, new_date): self.loan_date = new_date
+    def setDueDate(self, new_date): self.due_date = new_date
+    def setReturned(self, new_returned): self.returned = new_returned
+    def setReturnDate(self, new_date): self.return_date = new_date
     
     def __str__(self):
         return f"ID: {self.id}\nUser ID: {self.user_id}\nBook ID: {self.book_id}\nLoan Date: {self.loan_date}\nDue Date: {self.due_date}\nReturned: {self.returned}\nReturn Date: {self.return_date}"
-        
