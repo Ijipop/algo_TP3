@@ -25,14 +25,3 @@ class Book:
     
     def __str__(self):
         return f"ID: {self.id}\nTitle: {self.title}\nAuthor: {self.author}\nISBN: {self.isbn}\nCategory: {self.category}\nAvailable: {self.available}\nAdded Date: {self.added_date}"
-
-        # book = {
-        #     'id': {self.id},
-        #     'title': {self.title},
-        #     'author': {self.author},
-        #     'isbn': {self.isbn},
-        #     'category': {self.category},
-        #     'available': {self.available},
-        #     'added_date': {self.added_date}
-        # }
-        # return str(book)

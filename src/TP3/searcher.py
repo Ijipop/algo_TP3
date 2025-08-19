@@ -10,14 +10,6 @@ class ISearcher(ABC):
     def search(self, search_term):
         pass
 
-    # def displaySearchResult(self, results):
-    #     if len(results)== 0:
-    #         {f"Résultats de recherche: auncune resultats"}
-    #     else:
-    #         (f"Résultats de recherche: {len(results)} livre(s) trouvé(s)")
-    #         for result in results:
-    #             print(result)
-
 class SearcherByTitle(ISearcher):
     def search(self, search_term):
         return [book for book in self.books if search_term.lower() in book.getTitle().lower()]

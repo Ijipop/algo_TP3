@@ -20,10 +20,3 @@ class NotificationPush(INotification):
 class NotificationBoat(INotification):  #For joke and testing
     def send_notification(self, message):
         print(f"BROOOOOOOOOOOOO: {message}")
-
-# class Notification(INotification):
-#     def __init__(self, nom: str):
-#         self.nom = nom
-
-#     def send_notification(self, message):
-#         print(f"{self.nom.upper()}: {message}")

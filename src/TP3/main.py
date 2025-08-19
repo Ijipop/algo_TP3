@@ -34,13 +34,15 @@ def main():
     print("\n--- Emprunts ---")
     library.loan_manager.borrow_book(1, 1)  # Alice emprunte 1984
     library.loan_manager.borrow_book(2, 2)  # Prof. Dupont emprunte Clean Code
+
+    # library.loan_manager.return_book(2)
     
     print("\n--- Recherche ---")
     results = SearcherByTitle(library.book_manager).search("Clean")
     print(f"Résultats de recherche: {len(results)} livre(s) trouvé(s)")
     
     print("\n--- Rapport des retards ---")
-    library.loan_manager.generate_overdue_report()
+    library.overdue_manager.generate_overdue_report()
 
 if __name__ == "__main__":
     main()

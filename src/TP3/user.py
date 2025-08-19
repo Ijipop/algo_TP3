@@ -4,9 +4,8 @@ import datetime
 class User(ABC):
     nb_users: int = 0
     
-    # @abstractmethod
     def __init__(self, name: str, email: str):
-        User.nb_users +=1 
+        User.nb_users +=1
         self.id: int = User.nb_users
         self.name: str = name
         self.email: str = email
@@ -31,9 +30,6 @@ class User(ABC):
 
     def __str__(self):
         return f"ID: {self.id}\nName: {self.name}\nE-mail: {self.email}\nMax Loans: {self.max_loans}\nLoad Duration: {self.loan_duration}\nRegistration Date: {self.registration_date}\nActive: {self.active}"
-    
-    # def can_burrow(self, loan: int) -> bool:
-    #     return loan < self.max_loans
 
 class UserStudent(User):
     def __init__(self, name, email):
@@ -58,7 +54,6 @@ class UserAdmin(User):
         super().__init__(name, email)
         self.max_loans = -1     # unlimited
         self.loan_duration = -1 # unlimited
-        # float('inf') # alt?
     
     def showType(self):
         return "admin"
