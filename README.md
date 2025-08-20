@@ -1,6 +1,6 @@
 # 2025H-420-930-MA TP3 : SYSTÈME DE GESTION DE BIBLIOTHÈQUE
 
-**Nom des étudiants :** [Vos noms ici]
+**Nom des étudiants :** Natacha MEYER & Jean-François LEFEBVRE
 
 Le but de ce TP est de refactoriser un code existant qui gère une bibliothèque.
 Le code viole intentionnellement les principes SOLID et manque d'implémentation
