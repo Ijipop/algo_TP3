@@ -34,8 +34,6 @@ def main():
     print("\n--- Emprunts ---")
     library.loan_manager.borrow_book(1, 1)  # Alice emprunte 1984
     library.loan_manager.borrow_book(2, 2)  # Prof. Dupont emprunte Clean Code
-
-    # library.loan_manager.return_book(2)
     
     print("\n--- Recherche ---")
     results = SearcherByTitle(library.book_manager).search("Clean")

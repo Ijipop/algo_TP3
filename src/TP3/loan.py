@@ -23,14 +23,14 @@ class Loan():
     def getReturnDate(self): return self.return_date
 
     def setLoanDate(self, new_date): self.loan_date = new_date
-    def setReturned(self, new_returned): self.returned = new_returned
-    def setReturnDate(self, new_date): self.return_date = new_date
-    
     def setDueDate(self, loan_duration):
         if loan_duration == -1:
             self.due_date == None
         else:
             self.due_date = datetime.datetime.now() + datetime.timedelta(loan_duration)
+    def setReturned(self, new_returned): self.returned = new_returned
+    def setReturnDate(self, new_date): self.return_date = new_date
+    
     
     def __str__(self):
         return f"-----------\nID: {self.id}\nUser ID: {self.user_id}\nBook ID: {self.book_id}\nLoan Date: {self.loan_date}\nDue Date: {self.due_date}\nReturned: {self.returned}\nReturn Date: {self.return_date}\n-----------"

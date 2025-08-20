@@ -15,7 +15,8 @@ class LoanManager:
         self.rulesBorrow = [
             RuleUserAndBookFound(),
             RuleBookAvailable(),
-            RuleUserActive()
+            RuleUserActive(),
+            RuleUserMaxLoans()
         ]
         self.rulesReturn = [
             RuleLoanReturned(),
