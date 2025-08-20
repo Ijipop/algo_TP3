@@ -11,6 +11,8 @@ dependencies = []
 
 [project.scripts]
 main = "TP3:main"
+og = "___OG:main"
+test = "dist:main"
 
 [build-system]
 requires = ["hatchling"]
