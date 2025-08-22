@@ -1,6 +1,5 @@
 from TP3.notification_manager import NotificationManager
 from TP3.book import *
-# import datetime
 
 class BookManager:
     def __init__(self, notification_manager: NotificationManager):

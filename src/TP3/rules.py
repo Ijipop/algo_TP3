@@ -35,8 +35,6 @@ class RuleBookAvailable(IRuleBorrow):
     
 class RuleUserMaxLoans(IRuleBorrow):
     def check(self, book, user, loans):
-        # print(user.getMaxLoans())
-        # print(loans)
         if user.getMaxLoans() == -1:
             return True
         return len(loans) < user.getMaxLoans()
