@@ -2,10 +2,8 @@ from TP3.library import Library
 from TP3.notification_manager import NotificationManager
 from TP3.notification import *
 from TP3.searcher import *
-
 from TP3.user import *
 from TP3.book import *
-
 
 # DÉMONSTRATION DU CODE PROBLÉMATIQUE. Vous pouvez adapter cette fonction pour tester différentes parties du code.
 def main():

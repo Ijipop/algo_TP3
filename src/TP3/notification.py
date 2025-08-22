@@ -4,7 +4,7 @@ class INotification(ABC):
     @abstractmethod
     def send_notification(self, message: str):
         pass
-
+    
 class NotificationEmail(INotification):
     def send_notification(self, message):
         print(f"EMAIL: {message}")
